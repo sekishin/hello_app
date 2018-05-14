@@ -3,6 +3,8 @@ require 'test_helper'
 class MicropostsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @micropost = microposts(:one)
+    @user = users(:one)
+    @micropost.user_id = @user.id
   end
 
   test "should get index" do
